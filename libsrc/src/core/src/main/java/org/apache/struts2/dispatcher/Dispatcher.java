@@ -313,7 +313,7 @@ public class Dispatcher {
     private void init_LegacyStrutsProperties() {
         configurationManager.addConfigurationProvider(new LegacyPropertiesConfigurationProvider());
     }
-
+//sss 加载struts.xml struts-dufault.xml等配置文件提供类 struts2
     private void init_TraditionalXmlConfigurations() {
         String configPaths = initParams.get("config");
         if (configPaths == null) {
@@ -406,7 +406,7 @@ public class Dispatcher {
     	if (configurationManager == null) {
     		configurationManager = new ConfigurationManager(BeanSelectionProvider.DEFAULT_BEAN_NAME);
     	}
-
+        //ttt Struts2初始化的开始，在Dispatcher里面初始化 struts2
         try {
             init_DefaultProperties(); // [1]
             init_TraditionalXmlConfigurations(); // [2]
