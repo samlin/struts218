@@ -160,7 +160,7 @@ public class DefaultConfiguration implements Configuration {
         packageContexts.clear();
         loadedFileNames.clear();
         List<PackageProvider> packageProviders = new ArrayList<PackageProvider>();
-
+//sss 循环调用所有的Provider类,每个Provider里面的配置都注入到容器里面 struts2
         ContainerProperties props = new ContainerProperties();
         ContainerBuilder builder = new ContainerBuilder();
         for (final ContainerProvider containerProvider : providers)

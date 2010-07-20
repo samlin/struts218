@@ -133,6 +133,19 @@ class ContainerImpl implements Container {
     }
   }
 
+  private final class ContextualCallableImplementation implements ContextualCallable<Void> {
+    private final Object o;
+
+    private ContextualCallableImplementation(Object o) {
+      this.o = o;
+    }
+
+    public Void call(InternalContext context) {
+      inject(o, context);
+      return null;
+    }
+  }
+
   interface InjectorFactory<M extends Member & AnnotatedElement> {
     Injector create(ContainerImpl container, M member, String name)
         throws MissingDependencyException;
@@ -502,12 +515,8 @@ class ContainerImpl implements Container {
   }
 
   public void inject(final Object o) {
-    callInContext(new ContextualCallable<Void>() {
-      public Void call(InternalContext context) {
-        inject(o, context);
-        return null;
-      }
-    });
+    ContextualCallable<Void> callable = new ContextualCallableImplementation(o);
+    callInContext(callable);
   }
 
   public <T> T inject(final Class<T> implementation) {
