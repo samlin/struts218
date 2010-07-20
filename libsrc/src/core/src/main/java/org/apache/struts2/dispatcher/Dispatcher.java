@@ -473,7 +473,7 @@ public class Dispatcher {
             String namespace = mapping.getNamespace();
             String name = mapping.getName();
             String method = mapping.getMethod();
-
+            //sss 核心的从容器里面产生ActionProxy的地方 struts2
             Configuration config = configurationManager.getConfiguration();
             ActionProxy proxy = config.getContainer().getInstance(ActionProxyFactory.class).createActionProxy(
                     namespace, name, method, extraContext, true, false);
