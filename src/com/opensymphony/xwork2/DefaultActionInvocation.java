@@ -393,7 +393,7 @@ public class DefaultActionInvocation implements ActionInvocation {
         invocationContext = new ActionContext(contextMap);
         invocationContext.setName(proxy.getActionName());
 
-        // get a new List so we don't get problems with the iterator if someone changes the list
+        // get a new List so we don't get problems with the iterator if someone changes the list sss 得到所有系统配置的拦截器(Interceptors) struts2
         List<InterceptorMapping> interceptorList = new ArrayList<InterceptorMapping>(proxy.getConfig().getInterceptors());
         interceptors = interceptorList.iterator();
     }

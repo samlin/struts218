@@ -322,7 +322,7 @@ public class DefaultActionMapper implements ActionMapper {
     protected ActionMapping parseActionName(ActionMapping mapping) {
         if (mapping.getName() == null) {
             return mapping;
-        }
+        }//sss 用来处理在提交action中的 Action!method情况  struts2
         if (allowDynamicMethodCalls) {
             // handle "name!method" convention.
             String name = mapping.getName();

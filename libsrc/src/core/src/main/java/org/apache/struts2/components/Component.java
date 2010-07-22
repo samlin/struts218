@@ -273,7 +273,7 @@ public class Component {
      * the parameter expression is returned as is.
      */
 	public static String stripExpressionIfAltSyntax(ValueStack stack, String expr) {
-		if (altSyntax(stack)) {
+		if (altSyntax(stack)) {// sss 处理struts2的jsp tag中的%{ } struts2 
             // does the expression start with %{ and end with }? if so, just cut it off!
             if (expr.startsWith("%{") && expr.endsWith("}")) {
                 return expr.substring(2, expr.length() - 1);

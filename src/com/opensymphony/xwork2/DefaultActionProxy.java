@@ -145,7 +145,7 @@ public class DefaultActionProxy implements ActionProxy, Serializable {
         if (StringUtils.isEmpty(this.method)) {
             this.method = config.getMethodName();
             if (StringUtils.isEmpty(this.method)) {
-                this.method = "execute";
+                this.method = "execute";//sss 如果提交的时候没有传方法名进来,在这里就设定为默认方法名是execute struts2
             }
         }
     }
