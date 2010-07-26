@@ -508,7 +508,7 @@ public abstract class UIBean extends Component {
 
     public boolean end(Writer writer, String body) {
         evaluateParams();
-        try {
+        try {//sss 在struts2为每个tag中解析freemarker的模板的地方 struts2
             super.end(writer, body, false);
             mergeTemplate(writer, buildTemplateName(template, getDefaultTemplate()));
         } catch (Exception e) {
