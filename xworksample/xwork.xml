@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xwork PUBLIC 
+	"-//OpenSymphony Group//XWork 1.1.1//EN"
+	"http://www.opensymphony.com/xwork/xwork-1.1.1.dtd">
+
+
+<xwork>
+	<include file="xwork-default.xml" />
+	<package name="default-hello-world" extends="xwork-default" namespace="/helloWorld">
+		<result-types>
+			<result-type name="printToConsole" class="com.opensymphony.xwork.example.PrintToConsoleResult" />
+		</result-types>
+		
+		<action name="helloWorld" class="com.opensymphony.xwork.example.HelloWorldAction">
+			<result type="printToConsole">
+				<param name="param">${message}</param>
+			</result>
+		</action>
+	</package>
+</xwork>

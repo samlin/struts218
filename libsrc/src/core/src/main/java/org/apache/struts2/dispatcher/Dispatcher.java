@@ -406,7 +406,7 @@ public class Dispatcher {
     	if (configurationManager == null) {
     		configurationManager = new ConfigurationManager(BeanSelectionProvider.DEFAULT_BEAN_NAME);
     	}
-        //ttt Struts2初始化的开始，在Dispatcher里面初始化 struts2
+        //sss Struts2初始化的开始，在Dispatcher里面初始化 struts2
         try {
             init_DefaultProperties(); // [1]
             init_TraditionalXmlConfigurations(); // [2]

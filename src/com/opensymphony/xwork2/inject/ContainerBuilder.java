@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  * @author crazybob@google.com (Bob Lee)
  */
 public final class ContainerBuilder {
-
+//sss 构建Struts里面的容器的类,其实也是xwork的容器构建类 struts2
   final Map<Key<?>, InternalFactory<?>> factories =
       new HashMap<Key<?>, InternalFactory<?>>();
   final List<InternalFactory<?>> singletonFactories =
