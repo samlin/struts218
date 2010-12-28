@@ -69,11 +69,11 @@ public class StrutsPrepareAndExecuteFilter implements StrutsStatics, Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
-
+      //sss e1 main struts2里面的过滤器的web入口 struts2
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
 
-        try {
+        try {// sss e1a 处理提交编码的问题,默认为utf-8 struts2
             prepare.setEncodingAndLocale(request, response);
             prepare.createActionContext(request, response);
             prepare.assignDispatcherToThread();

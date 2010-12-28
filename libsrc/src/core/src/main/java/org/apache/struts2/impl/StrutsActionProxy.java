@@ -37,7 +37,7 @@ public class StrutsActionProxy extends DefaultActionProxy {
                              boolean executeResult, boolean cleanupContext) {
         super(inv, namespace, actionName, methodName, executeResult, cleanupContext);
     }
-
+//sss e3 默认真正action proxy执行的入口 struts2
     public String execute() throws Exception {
         ActionContext previous = ActionContext.getContext();
         ActionContext.setContext(invocation.getInvocationContext());
@@ -48,7 +48,7 @@ public class StrutsActionProxy extends DefaultActionProxy {
 //                    return invocation.invoke();
 //                }
 //            });
-            
+            //sss e3a 通过代理第一次调用调度器的地方 struts2
             return invocation.invoke();
         } finally {
             if (cleanupContext)

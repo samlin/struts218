@@ -226,7 +226,7 @@ public class DefaultActionInvocation implements ActionInvocation {
             if (executed) {
                 throw new IllegalStateException("Action has already executed");
             }
-
+            //sss e4 整个调度器里面的拦截器开始递归调用的地方 strust2
             if (interceptors.hasNext()) {
                 final InterceptorMapping interceptor = (InterceptorMapping) interceptors.next();
                 String interceptorMsg = "interceptor: " + interceptor.getName();

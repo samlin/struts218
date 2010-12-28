@@ -123,7 +123,7 @@ public class ServletConfigInterceptor extends AbstractInterceptor implements Str
     public String intercept(ActionInvocation invocation) throws Exception {
         final Object action = invocation.getAction();
         final ActionContext context = invocation.getInvocationContext();
-        //sss 在Action根据判断来把servlet加入到action中去 struts2
+        // sss f3 主要处理*Aware.java接口 在Action根据判断来把servlet,Session Request....加入到action中去 struts2
         if (action instanceof ServletRequestAware) {
             HttpServletRequest request = (HttpServletRequest) context.get(HTTP_REQUEST);
             ((ServletRequestAware) action).setServletRequest(request);
