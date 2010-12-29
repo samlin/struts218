@@ -237,13 +237,13 @@ public class DefaultActionInvocation implements ActionInvocation {
                 finally {
                     UtilTimerStack.pop(interceptorMsg);
                 }
-            } else {
+            } else {//sss e4a完成了拦截器的调用,开始真正调用Action的地方 struts2 
                 resultCode = invokeActionOnly();
             }
 
             // this is needed because the result will be executed, then control will return to the Interceptor, which will
             // return above and flow through again
-            if (!executed) {
+            if (!executed) {//sss e6 预处理结果执行之前的监听器,假如客户实现的话 struts2
                 if (preResultListeners != null) {
                     for (Object preResultListener : preResultListeners) {
                         PreResultListener listener = (PreResultListener) preResultListener;
@@ -258,7 +258,7 @@ public class DefaultActionInvocation implements ActionInvocation {
                         }
                     }
                 }
-
+                //sss e7 开始执行真正的struts2中的实现Result的配置子类 struts2
                 // now execute the result, if we're supposed to
                 if (proxy.getExecuteResult()) {
                     executeResult();
@@ -434,7 +434,7 @@ public class DefaultActionInvocation implements ActionInvocation {
                     }
                 }
             }
-
+            //sss e5 在调度器中真正调用实际Action的地方 struts2
             if (!methodCalled) {
                 methodResult = method.invoke(action, new Object[0]);
             }
