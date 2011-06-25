@@ -3,8 +3,6 @@
     <wb-module deploy-name="struts2-mailreader-2.1.8">
         <wb-resource deploy-path="/" source-path="/WebContent"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <wb-resource deploy-path="/WEB-INF/classes/" source-path="/ImportedClasses"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/libsrc/src/core/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent/WEB-INF/src/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/xworksample"/>
         <property name="context-root" value="struts2-mailreader-2.1.8"/>
